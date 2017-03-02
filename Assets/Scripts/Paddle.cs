@@ -6,7 +6,7 @@ public class Paddle : MonoBehaviour {
 
 
     Rigidbody2D rigidBody;
-    float speed = 7;
+    public float speed = 7;
 
 
     void Start () {
