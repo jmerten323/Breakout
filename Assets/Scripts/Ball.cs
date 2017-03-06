@@ -25,7 +25,7 @@ public class Ball : MonoBehaviour
         {
             GetOut();
         }
-        if (Input.GetButtonDown("jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             GetComponent<Rigidbody2D>().velocity = startingVelocity;
         }

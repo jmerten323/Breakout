@@ -3,14 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Brick : MonoBehaviour {
-
+    public int hitsToKill;
+    private int numberOfHits;
 	// Use this for initialization
 	void Start () {
+        numberOfHits = 0;
 		
 	}
-    void OnCollisionEnter2D(Collision2D coll)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        gameObject.SetActive(false);
+        if (collision.gameObject.tag == "Ball");
+        {
+            numberOfHits++;
+            if (numberOfHits == hitsToKill)
+            {
+                Destroy(this.gameObject);
+            }
+        }
     }
 
 }
