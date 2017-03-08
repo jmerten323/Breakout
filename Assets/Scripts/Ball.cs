@@ -6,7 +6,7 @@ public class Ball : MonoBehaviour
 {
 
     public Vector2 startingVelocity = new Vector2(15, -20);
-    private Vector3 startingPosition; 
+    private Vector3 startingPosition;
     public GameObject gameOver;
 
     int lives = 3;
@@ -25,10 +25,12 @@ public class Ball : MonoBehaviour
         {
             GetOut();
         }
+
         if (Input.GetButtonDown("Jump"))
         {
             GetComponent<Rigidbody2D>().velocity = startingVelocity;
         }
+
     }
 
     void GetOut()
@@ -38,18 +40,14 @@ public class Ball : MonoBehaviour
 
         transform.position = startingPosition;
         GetComponent<Rigidbody2D>().velocity = new Vector2();
-
-
-
         if (lives == 0)
         {
-            DoGameOver();
+            DoGameOver (); 
         }
         
-    }
 
-    void DoGameOver ()
-    {
-        gameOver.SetActive(true);
+
     }
+    void DoGameOver () { 
+    gameOver.SetActive(true);}
 }
