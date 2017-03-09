@@ -18,6 +18,8 @@ public class Brick : MonoBehaviour {
             if (numberOfHits == hitsToKill)
             {
                 Destroy(this.gameObject);
+                Debug.Log(hitsToKill);
+                FindObjectOfType<Ball>().YouBrokeABrick();
             }
         }
     }
